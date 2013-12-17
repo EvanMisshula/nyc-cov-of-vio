@@ -1,0 +1,22 @@
+computeAcadCred <- function() {
+            # make the geometry ...counties
+    bronx=geo.make(state="NY",county="Bronx",tract = "*")
+    queens=geo.make(state="NY",county="Queens",tract = "*")
+    manhattan=geo.make(state="NY",county="New York",tract = "*")
+    si=geo.make(state="NY",county="Richmond",tract = "*")
+    bk=geo.make(state="NY",county="Kings",tract = "*")
+    #make nyc
+    nyc=bronx+queens+manhattan+si+bk
+    #get gendered education -- pretty names or you're lost
+    edu <-  <- acs.fetch(geography = nyc,table.number = "B15001",col.names = "pretty")
+        acs_county=unmarriedBirths@geography$county
+    acs_tract=unmarriedBirths@geography$tract
+    #select the columns we need
+    relcolumns <- c(1, #ttl over 18
+                    2, #ttl over 18 men
+                    3, #ttl over 18 to 24 men
+                    4, #ttl over 18 to 24 men: Less than 9th grade
+                    5, #ttl over 18 to 24 men: 9th to 12th grade, no diploma
+                    6, #ttl over 18 to 24 men : High school graduate, GED, or alternative
+                    7 #ttl over 18 to 24 men: Some college, no degree
+                    )

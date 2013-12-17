@@ -1,0 +1,1 @@
+ogr2ogr -f geoJSON -select c2000,c2010,d2010,pChg2010,WhiteP,BlackP,AsianP,HispanicP,OtherP,CTLabel,BoroCode,BoroName,CT2010,BoroCT2010,bckm,CDEligibil,NTACode,NTAName,PUMA,Shape_Leng,Shape_Area nyct2010fs.geojson -t_srs "WGS84" ct2010fs.shp

@@ -1,0 +1,11 @@
+computePctPoor <- function() {
+    # make the geometry ...counties
+    bronx=geo.make(state="NY",county="Bronx",tract = "*")
+    queens=geo.make(state="NY",county="Queens",tract = "*")
+    manhattan=geo.make(state="NY",county="New York",tract = "*")
+    si=geo.make(state="NY",county="Richmond",tract = "*")
+    bk=geo.make(state="NY",county="Kings",tract = "*")
+    #make nyc
+    nyc=bronx+queens+manhattan+si+bk
+    #get gendered employment -- pretty names or you're lost
+    poor_education_gender <- acs.fetch(geography = nyc,table.number = "B17003",col.names = "pretty")

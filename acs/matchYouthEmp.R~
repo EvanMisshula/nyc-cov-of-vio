@@ -1,0 +1,7 @@
+matchYouthEmp <- function(dbf,youthEmployment)
+    {
+        youthMatch <- data.frame(dbf['BoroCT2010'],
+                                 dbf['BoroCode'],
+                                 dbf['CT2010'],
+                                 rowInYE=rep(0,nrow(dbf)),
+                                 pctIdl=rep(0,nrow(dbf)))

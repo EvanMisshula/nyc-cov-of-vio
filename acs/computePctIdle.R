@@ -12,7 +12,8 @@ computePctIdle <- function() {
     acs_county=age_sex_gt_16@geography$county
     #select the columns we need
     relcolumns <- c(1,2,3,4,6,8,9,10,11,13,15,16,17,18,20,22,23)
-
+    acs_tract=age_sex_gt_16@geography$tract
+    
     # create a regular data frame from the estimates
     youthEmployment <- data.frame(acs_county,acs_tract,age_sex_gt_16@estimate[,relcolumns])
 
