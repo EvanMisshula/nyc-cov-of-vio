@@ -34,7 +34,7 @@ computeAcadCred1835 <- function() {
                     "A1824Mlt9thG",
                     "A1824M9to12NoDip",
                     "A1824MHSGrad",
-                    "A1824MSColND"
+                    "A1824MSColND",
                     "A2534MTot",
                     "A2534Mlt9thG",
                     "A2534M9to12NoDip",
@@ -60,7 +60,7 @@ computeAcadCred1835 <- function() {
                        noEdCred$A2534Mlt9thG+
                    noEdCred$A2534M9to12NoDip+
                    noEdCred$A2534MHSGrad+
-                   noEdCred$A2534MSColND+
+                   noEdCred$A2534MSColND
 
     noEdCred$pct.male.youth <-100*(noEdCred$A18OMTot/noEdCred$MFTot)
     

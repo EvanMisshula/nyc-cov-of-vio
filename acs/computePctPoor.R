@@ -32,4 +32,7 @@ computePctPoor <- function() {
 
     poverty$pct.in.poverty <- 100*(poverty$People.in.poverty/
                                    poverty$Total.people)
+
+    poverty$pct.in.poverty[is.nan(poverty$pct.in.poverty)] <- 0
+    
 }
